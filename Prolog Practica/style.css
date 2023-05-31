@@ -1,4 +1,41 @@
-h1 {
-    font-size: 1rem;
-    color: blue;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    width: 60%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header {
+}
+
+nav ul{
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+
+}
+
+ul a {
+    text-decoration: none;
+}
+
+nav {
+    width: 60%;
+    flex-direction: column;
 }
