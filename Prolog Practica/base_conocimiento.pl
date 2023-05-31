@@ -1,6 +1,6 @@
 % Películas y sus características
 :- use_module(library(http/json)).
-pelicula('Taxi Driver', drama, 'La historia de Travis Bickle, un veterano de Vietnam que trabaja como taxista y se sumerge en la decadencia de Nueva York.').
+pelicula('Taxi Driver', drama, 'La historia de Travis Bickle, un veterano de Vietnam que trabaja como taxista y se sumerge en la decadencia de Nueva York.','taxi.jpg').
 actores('Taxi Driver', ['Robert De Niro', 'Jodie Foster']).
 
 pelicula('Raging Bull', drama, 'La vida del boxeador Jake LaMotta y su ascenso y caída en el mundo del boxeo, marcada por la autodestrucción y la violencia.').
