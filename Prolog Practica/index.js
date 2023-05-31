@@ -10,7 +10,6 @@ session.consult("base_conocimiento.pl", {
 
 // Realizar una consulta
 
-
 function evento() {
     let query = "actor_pelicula('Robert De Niro', Y).";
     const sesion = session.query(query, {
