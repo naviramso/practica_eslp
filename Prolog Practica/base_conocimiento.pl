@@ -96,8 +96,8 @@ actores('The Pursuit of Happyness', ['Will Smith', 'Jaden Smith']).
 
 
 recomendar_peliculas(Generos, ActoresFavoritos, PeliculasRecomendadas) :-
-    findall((Pelicula,Z), (
-        pelicula(Pelicula, Genero, Z),
+    findall((Pelicula,Z, Y), (
+        pelicula(Pelicula, Genero, Z, Y),
         buscar_elem_list(Genero, Generos),
         actores(Pelicula, Actores),
         interseccion(ActoresFavoritos, Actores, ActoresEnComun),
