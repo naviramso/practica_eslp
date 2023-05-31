@@ -1,45 +1,40 @@
+// Crear una sesión de Tau Prolog
+
 let session = pl.create();
+
+let resultArray = [];
+
+// Cargar la base de conocimientos
 session.consult("base_conocimiento.pl", {
   success: () => {
-    console.log("conectado con la base de conocimiento");
+    console.log("Conectado con la base de conocimiento");
+    // Realizar la consulta después de cargar la base de conocimientos
+    evento();
   },
   error: (error) => {
-    console.error("error" + error);
+    console.error("Error: " + error);
   },
 });
 
-// Realizar una consulta
-
+// Función para realizar la consulta
 function evento() {
-    let query = "actor_pelicula('Robert De Niro', Y).";
-    const sesion = session.query(query, {
-      success: (goal) => {
-        console.log(goal);
-      },
-      error: (err) => {
-        console.error(err);
-      },
-    });
-    
-     session.answer({
-      success: function (answer) {
-        console.log(session.format_answer(answer)); 
-        session.answer({
-          success: function (answer) {
-            console.log(session.format_answer(answer));
-          },
-          // ...
-        });
-      },
-      fail: function () {
-        /* No more answers */
-      },
-      error: function (err) {
-        /* Uncaught exception */
-      },
-      limit: function () {
-        /* Limit exceeded */
-      },
-    });
-}
+  session.query("recomendar_peliculas([drama] , ['Al Pacino'], P).", {
+    success: function () {
+      session.answer(x => {
+        // Obtener los resultados como cadena de texto
+        let resultString = session.format_answer(x);
+        let subString = resultString.substring(6, resultString.length - 3);
+        // Convertir la cadena de texto a un array
+        resultArray = subString.split("),(");
+      
+        // Mostrar el array de resultados
+        console.log(resultArray)  
+        
+      });
+    },
+    error: function (err) {
+      console.error(err);
+    },
+  });}
 
+  console.log(resultArray);

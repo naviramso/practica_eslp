@@ -18,6 +18,10 @@
 }
 
 header {
+    height: 10vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.817);
+    z-index: 1;
 }
 
 nav ul{
@@ -26,9 +30,8 @@ nav ul{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: auto;
     gap: 50px;
-
 }
 
 ul a {
@@ -38,4 +41,64 @@ ul a {
 nav {
     width: 60%;
     flex-direction: column;
+}
+
+footer .flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    
+}
+
+.img {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.flex-container .flex{
+    flex-direction: column;
+    gap: 40px;
+    
+}
+
+.generos-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.actores-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 90px
+}
+
+.actores-container section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.actor .actor-img {
+    width: 100%;
+    height: auto;
+}
+
+.actor {
+    width: 100px;
+    height: 150px;
+}
+
+cuerpo {
+    position: absolute;
+    top: 10vh;
 }

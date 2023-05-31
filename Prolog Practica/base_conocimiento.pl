@@ -1,4 +1,5 @@
 % Películas y sus características
+:- use_module(library(http/json)).
 pelicula('Taxi Driver', drama, 'La historia de Travis Bickle, un veterano de Vietnam que trabaja como taxista y se sumerge en la decadencia de Nueva York.').
 actores('Taxi Driver', ['Robert De Niro', 'Jodie Foster']).
 
@@ -92,13 +93,36 @@ actores('I Am Legend', ['Will Smith']).
 pelicula('The Pursuit of Happyness', drama, 'Basada en la historia real de Chris Gardner, un hombre que lucha por superar la adversidad y alcanzar el éxito profesional mientras cuida a su hijo.').
 actores('The Pursuit of Happyness', ['Will Smith', 'Jaden Smith']).
 
+
+
 recomendar_peliculas(Generos, ActoresFavoritos, PeliculasRecomendadas) :-
-    findall(Pelicula, (
-        pelicula(Pelicula, Genero, _),
-        member(Genero, Generos),
+    findall((Pelicula,Z), (
+        pelicula(Pelicula, Genero, Z),
+        buscar_elem_list(Genero, Generos),
         actores(Pelicula, Actores),
-        intersection(ActoresFavoritos, Actores, ActoresEnComun),
-        length(ActoresEnComun, CantidadActoresEnComun),
+        interseccion(ActoresFavoritos, Actores, ActoresEnComun),
+        contar(ActoresEnComun, CantidadActoresEnComun),
         CantidadActoresEnComun > 0
     ), PeliculasRecomendadas).
 
+contar([],0).
+contar([C|R],N):- contar(R,N1), N is N1+1.
+
+buscar_elem_list(_,[]):- false.
+buscar_elem_list(X,[Y|R]):- X = Y; buscar_elem_list(X,R).
+
+interseccion([], _, []).
+interseccion([X|Resto1], Lista2, [X|InterseccionResto]) :-
+    buscar_elem_list(X, Lista2),
+    interseccion(Resto1, Lista2, InterseccionResto).
+interseccion([_|Resto1], Lista2, Interseccion) :-
+    interseccion(Resto1, Lista2, Interseccion).
+
+hay_interseccion(Lista1, Lista2) :-
+    interseccion(Lista1, Lista2, [_|_]).
+
+
+    
+
+
+    
