@@ -38,7 +38,14 @@ function evento() {
     error: function (err) {
       console.error(err);
     },
-  });}
+  });
+  const sugerencias=document.getElementById("sugernciasGeneradas");
+  resultArray.forEach(genres=>{
+    const contenedor= document.createElement("seccion");
+    const imagen= document.createElement("img");
+    const descripcion=document.createElement("des");
+  })
+}
 
   console.log(resultArray);
 
