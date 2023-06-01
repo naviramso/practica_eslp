@@ -4,6 +4,9 @@ let session = pl.create();
 
 let resultArray = [];
 
+let generos =[];
+let actores=[];
+
 // Cargar la base de conocimientos
 session.consult("base_conocimiento.pl", {
   success: () => {
@@ -55,6 +58,8 @@ function evento() {
   const checkboxes = document.querySelector(".generos-container");
   
   genres.forEach((genre) => {
+
+    
     const section = document.createElement("section");
     const input = document.createElement("input");
     input.type = "checkbox";
@@ -68,8 +73,33 @@ function evento() {
     section.appendChild(label);
   
     checkboxes.appendChild(section);
+    input.addEventListener("change", agregarGenero);
   });
-  
 
+function agregarGenero(event){
+    console.log(event.target.id);
+    if (event.target.checked) {
+      generos.push(event.target.id);
+    } else {
+      generos = generos.filter(function (item) {
+        return item !== event.target.id
+      });
+      // Realizar acciones adicionales cuando el checkbox está desmarcado
+    }
+    console.log(generos);
+  }
+  
+function agregarActor(event){
+  console.log(event);
+  if (event.target.checked) {
+    actores.push(event.target.id);
+  } else {
+    actores = actores.filter(function (item) {
+      return item !== event.target.id
+    });
+    // Realizar acciones adicionales cuando el checkbox está desmarcado
+  }
+  console.log(actores)
+}
 
   
