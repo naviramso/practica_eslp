@@ -1,6 +1,6 @@
 let divideSafe dividend divisorFunc =
-    if Lazy.force divisorFunc <> 0 then
-        dividend / Lazy.force divisorFunc
+    if  divisorFunc <> 0 then
+        dividend / divisorFunc
     else
         0
 

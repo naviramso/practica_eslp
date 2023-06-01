@@ -52,7 +52,7 @@ session.consult("base_conocimiento.pl", {
 // Función para realizar la consulta
 function evento() {
   result = [];
-  const s = document.getElementById("sugerenciasGeneradas")
+  const s = document.getElementById("sugerenciasGeneradas");
   s.innerHTML = "";
   let query = `recomendar_peliculas(${convertirLista(
     generos
@@ -73,10 +73,9 @@ function evento() {
           result.push(array);
         });
         // Mostrar el array de resultados
-        
+
         pel();
         result = [];
-        
       });
     },
     error: function (err) {
@@ -88,32 +87,55 @@ function evento() {
 const pel = () => {
   const sugerencias = document.getElementById("sugerenciasGeneradas");
   result.forEach((genres) => {
-    const contenedor = document.createElement("seccion");
-    contenedor.className = "sugerencias";
-    const titulo = document.createElement("h3");
-    titulo.textContent = genres[0];
-    contenedor.appendChild(titulo);
-    const cont = document.createElement("div");
-    cont.className = "container-pe";
-    contenedor.appendChild(cont);
-    const imagen = document.createElement("img");
-    imagen.className = "pelicula-img";
-    imagen.src = `images/Pelis/${genres[genres.length - 1]}`;
-    imagen.alt = genres[0];
-    cont.appendChild(imagen);
-    const container_text = document.createElement("div");
-    container_text.className = "container-text";
-    cont.appendChild(container_text);
-    const descripcion = document.createElement("span");
-    descripcion.className = "pelicula-descripcion";
-    descripcion.textContent = genres[1];
-    container_text.appendChild(descripcion);
+    let query = `genero_actor('${genres[0]}', Y).`;
+    console.log(query);
+    session.query(query, {
+      success: function () {
+        session.answer((x) => {
+          // Obtener los resultados como cadena de texto
+          let resi = session.format_answer(x);
+          let su = resi.substring(5, resi.length - 1);
+          // Convertir la cadena de texto a un array
+          let re = su.split(",");
 
-    const gene = document.createElement("p");
-    gene.className = "genero";
-    gene.textContent = genres[2];
+          let acts = re.slice(1).join(", ");
+          console.log(acts)
 
-    sugerencias.appendChild(contenedor);
+          const contenedor = document.createElement("seccion");
+          contenedor.className = "sugerencias";
+          const titulo = document.createElement("h3");
+          titulo.textContent = genres[0];
+          contenedor.appendChild(titulo);
+          const cont = document.createElement("div");
+          cont.className = "container-pe";
+          contenedor.appendChild(cont);
+          const imagen = document.createElement("img");
+          imagen.className = "pelicula-img";
+          imagen.src = `images/Pelis/${genres[genres.length - 1]}`;
+          imagen.alt = genres[0];
+          cont.appendChild(imagen);
+          const container_text = document.createElement("div");
+          container_text.className = "container-text";
+          cont.appendChild(container_text);
+          const descripcion = document.createElement("span");
+          descripcion.className = "pelicula-descripcion";
+          descripcion.textContent = genres[1];
+          container_text.appendChild(descripcion);
+
+          const gene = document.createElement("p");
+          gene.className = "genero";
+          gene.textContent = re[0];
+          container_text.appendChild(gene);
+
+          const actores = document.createElement("p");
+          actores.className = "actores";
+          actores.textContent = acts;
+          container_text.appendChild(actores);
+
+          sugerencias.appendChild(contenedor);
+        });
+      },
+    });
   });
   result = [];
 };
@@ -158,5 +180,5 @@ function convertirLista(lista) {
 }
 
 function convertirLista2(lista) {
-  return "[" + "'" + lista.join("', '") + "'" + "]";
+  return "['" + lista.join("', '") + "']";
 }

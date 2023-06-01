@@ -15,7 +15,6 @@ function sieveOfEratosthenes(n) {
     }
   }
 
-  // Crear un array con los números primos encontrados
   let primeNumbers = [];
   for (let i = 2; i <= n; i++) {
     if (primes[i]) {
