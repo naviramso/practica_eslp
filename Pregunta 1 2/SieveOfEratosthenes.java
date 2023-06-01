@@ -34,7 +34,7 @@ public class SieveOfEratosthenes {
     }
 
     public static void main(String[] args) {
-        int n = 100000000;
+        int n = -1;
         List<Integer> primes = sieveOfEratosthenes(n);
         System.out.println(primes);
     }

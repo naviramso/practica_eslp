@@ -28,6 +28,6 @@ function sieveOfEratosthenes(n) {
 
 // Ejemplo de uso:
 
-let primes = sieveOfEratosthenes(1000000000);
+let primes = sieveOfEratosthenes(-1);
 
-console.log(primes[5761454]);
+console.log(primes);
