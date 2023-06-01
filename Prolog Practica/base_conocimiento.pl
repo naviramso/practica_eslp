@@ -1,6 +1,6 @@
 use_module(library(http/json)).
 % Películas y sus características
-pelicula('Taxi Driver', drama, 'La historia de Travis Bickle, un veterano de Vietnam que trabaja como taxista y se sumerge en la decadencia de Nueva York.').
+pelicula('Taxi Driver', drama, 'La historia de Travis Bickle, un veterano de Vietnam que trabaja como taxista y se sumerge en la decadencia de Nueva York.', 'taxi.jpg').
 actores('Taxi Driver', ['Robert De Niro', 'Jodie Foster']).
 
 pelicula('Raging Bull', drama, 'La vida del boxeador Jake LaMotta y su ascenso y caída en el mundo del boxeo, marcada por la autodestrucción y la violencia.', 'ranging.jpg').
@@ -42,7 +42,7 @@ actores('Edward Scissorhands', ['Johnny Depp', 'Winona Ryder']).
 pelicula('Charlie and the Chocolate Factory', fantasia, 'Basada en el libro de Roald Dahl, sigue las aventuras de Charlie Bucket en la fábrica de chocolate del excéntrico Willy Wonka.','charli.jpeg').
 actores('Charlie and the Chocolate Factory', ['Johnny Depp']).
 
-pelicula('Sweeney Todd: The Demon Barber of Fleet Street', musical, 'La historia de un barbero que busca venganza y se convierte en asesino mientras se une a una pastelera para deshacerse de los cuerpos.', 'barbero.jpeg').
+pelicula('Sweeney Todd: The Demon Barber of Fleet Street', musical, 'La historia de un barbero que busca venganza y se convierte en asesino mientras se une a una pastelera para deshacerse de los cuerpos.', 'barbero.jpg').
 actores('Sweeney Todd: The Demon Barber of Fleet Street', ['Johnny Depp', 'Helena Bonham Carter']).
 
 pelicula('Alice in Wonderland', aventura, 'Una adaptación del clásico cuento de Lewis Carroll, donde una joven Alice se sumerge en un mundo mágico y surrealista.', 'alice.jpg').
@@ -93,7 +93,7 @@ actores('I Am Legend', ['Will Smith']).
 pelicula('The Pursuit of Happyness', drama, 'Basada en la historia real de Chris Gardner, un hombre que lucha por superar la adversidad y alcanzar el éxito profesional mientras cuida a su hijo.','The Pursuit.jpeg').
 actores('The Pursuit of Happyness', ['Will Smith', 'Jaden Smith']).
 
-recomendar_peliculas(Generos, ActoresFavoritos, PeliculasRecomendadas) :-
+recomendar_peliculas(Generos, ActoresFavoritos, PeliculasRecomendadasSinRepetidos) :-
     findall((Pelicula,Z, Y), (
         pelicula(Pelicula, Genero, Z, Y),
         buscar_elem_list(Genero, Generos),
@@ -101,7 +101,8 @@ recomendar_peliculas(Generos, ActoresFavoritos, PeliculasRecomendadas) :-
         interseccion(ActoresFavoritos, Actores, ActoresEnComun),
         contar(ActoresEnComun, CantidadActoresEnComun),
         CantidadActoresEnComun > 0
-    ), PeliculasRecomendadas).
+    ), PeliculasRecomendadas),
+    eliminar_repetidos(PeliculasRecomendadas, PeliculasRecomendadasSinRepetidos).
 
 contar([],0).
 contar([C|R],N):- contar(R,N1), N is N1+1.
@@ -118,3 +119,16 @@ interseccion([_|Resto1], Lista2, Interseccion) :-
 
 hay_interseccion(Lista1, Lista2) :-
     interseccion(Lista1, Lista2, [_|_]).
+
+
+eliminar_repetidos(Lista, Conjunto) :- 
+    eliminar_repetidos(Lista, [], Conjunto).
+
+eliminar_repetidos([], Acumulador, Acumulador).
+eliminar_repetidos([Elemento | Resto], Acumulador, Conjunto) :-
+    buscar_elem_list(Elemento, Acumulador),
+    eliminar_repetidos(Resto, Acumulador, Conjunto).
+eliminar_repetidos([Elemento | Resto], Acumulador, Conjunto) :-
+    \+ buscar_elem_list(Elemento, Acumulador),
+    eliminar_repetidos(Resto, [Elemento | Acumulador], Conjunto).
+

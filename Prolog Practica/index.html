@@ -12,96 +12,158 @@
       <nav class="flex">
         <span>Prolog Peliculas</span>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#generos">Generos</a></li>
+          <li><a href="#actores">Actores</a></li>
+          <li><a href="#sugerenciasGeneradas">Sugerencias</a></li>
         </ul>
       </nav>
     </header>
-<Cuerpo>
+
     <div class="container flex-container">
       <div class="flex">
         <h1>Prolog Peliculas</h1>
-        <button id="buton1" onclick="evento()">Hellow</button>
+        
         <hr />
         <h2>Generos:</h2>
-        <div class="generos-container">
-          
-        </div>
+        <div class="generos-container" id="generos"></div>
         <hr />
         <h2>Actores:</h2>
-        <div class="actores-container">
-            <section class="actor-list">
-                <!-- Robert De Niro -->
-                <div class="actor" onclick=>
-                  <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/1990_Venice_Film_Festival_Robert_De_Niro.jpg" alt="Robert De Niro" />
-                  <input type="checkbox"  id="Robert De Niro" class="inputActor" onchange="agregarActor(event)">
-                  <label>Robert De Niro</label>
-                </div>            
-              
-                <!-- Joe Pesci -->
-                <section class="actor">
-                  <img class="actor-img" src="images/Actor/MV5BMzc3MTcxNDYxNV5BMl5BanBnXkFtZTcwOTI3NjE1Mw@@._V1_.jpg" alt="Joe Pesci" />
-                  <input type="checkbox"  id="Joe Pesci" class="inputActor" onchange="agregarActor(event)">
-                  <label>Joe Pesci</label>
-                </section>
-              
-                <!-- Al Pacino -->
-                <div class="actor">
-                  <img class="actor-img" src="images/Actor/Al_Pacino.jpg" alt="Al Pacino" />
-                  <input type="checkbox"  id="Al Pacino" class="inputActor" onchange="agregarActor(event)">
-                  <label>Al Pacino</label>
-                </div>             
-                
-                <!-- Johnny Depp -->
-                <div class="actor">
-                  <img class="actor-img" src="images/Actor/MV5BOTBhMTI1NDQtYmU4Mi00MjYyLTk5MjEtZjllMDkxOWY3ZGRhXkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_FMjpg_UX1000_.jpg" alt="Johnny Depp" />
-                  <input type="checkbox" id="Johnny Depp" class="inputActor" onchange="agregarActor(event)">
-                  <label>Johnny Depp</label>
-                </div>
-                         
-                <!-- Keanu Reeves -->
-                <div class="actor">
-                  <img class="actor-img" src="images/Actor/Reunião_com_o_ator_norte-americano_Keanu_Reeves_(46806576944)_(cropped).jpg" alt="Keanu Reeves" />
-                  <input type="checkbox" id="Keanu Reeves" class="inputActor" onchange="agregarActor(event)">
-                  <label>Keanu Reeves</label>
-                </div>
-              
-                <!-- Benedict Cumberbatch -->
-                <div class="actor">
-                  <img class="actor-img" src="images/Actor/MV5BMjE0MDkzMDQwOF5BMl5BanBnXkFtZTgwOTE1Mjg1MzE@._V1_FMjpg_UX1000_.jpg" alt="Benedict Cumberbatch" />
-                  <input type="checkbox" id="Benedict Cumberbatch" class="inputActor" onchange="agregarActor(event)">
-                  <label>Benedict Cumberbatch</label>
-                </div>
-              
-                <!-- Emma Stone -->
-                <div class="actor">
-                  <img class="actor-img" src="images/Actor/Emma.jpeg" alt="Emma Stone" />
-                  <input type="checkbox" id="Emma Stone"  class="inputActor" onchange="agregarActor(event)">
-                  <label>Emma Stone</label>
-                </div>
-                <!--Will Smith-->
-                <div class="actor">
-                  <img class="actor-img" src="images/Actor/Willi.jpeg" alt="Emma Stone" />
-                  <input type="checkbox" id="Will Smith" class="inputActor" onchange="agregarActor(event)">
-                  <label>Will Smith</label>
-                </div>
-              </section>
-              
+        <div class="actores-container" id="actores" >
+          <!-- Robert De Niro -->
+          <section class="actor" onclick=>
+          <img
+            class="actor-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/b/bd/1990_Venice_Film_Festival_Robert_De_Niro.jpg"
+            alt="Robert De Niro"
+          />
+          <input
+            type="checkbox"
+            id="Robert De Niro"
+            class="inputActor"
+            onchange="agregarActor(event)"
+            placeholder="Robert De Niro"
+          />
+          <label>Robert De Niro</label>
+          </section>
+      
+        <!-- Joe Pesci -->
+        <section class="actor">
+          <img
+            class="actor-img"
+            src="images/Actor/MV5BMzc3MTcxNDYxNV5BMl5BanBnXkFtZTcwOTI3NjE1Mw@@._V1_.jpg"
+            alt="Joe Pesci"
+          />
+          <input
+            type="checkbox"
+            id="Joe Pesci"
+            class="inputActor"
+            onchange="agregarActor(event)"
+            placeholder="Joe Pesci"
+          />
+          <label>Joe Pesci</label>
+        </section>
+
+        <!-- Al Pacino -->
+        <div class="actor">
+          <img
+            class="actor-img"
+            src="images/Actor/Al_Pacino.jpg"
+            alt="Al Pacino"
+          />
+          <input
+            type="checkbox"
+            id="Al Pacino"
+            class="inputActor"
+            onchange="agregarActor(event)"
+            placeholder="Al Pacino"
+          />
+          <label>Al Pacino</label>
+        </div>
+
+        <!-- Johnny Depp -->
+        <div class="actor">
+          <img
+            class="actor-img"
+            src="images/Actor/MV5BOTBhMTI1NDQtYmU4Mi00MjYyLTk5MjEtZjllMDkxOWY3ZGRhXkEyXkFqcGdeQXVyNzI1NzMxNzM@._V1_FMjpg_UX1000_.jpg"
+            alt="Johnny Depp"
+          />
+          <input type="checkbox" id="Johnny Depp" class="inputActor"
+          onchange="agregarActor(event)" placeholder="Johnny Depp"">
+          <label>Johnny Depp</label>
+        </div>
+
+        <!-- Keanu Reeves -->
+        <div class="actor">
+          <img
+            class="actor-img"
+            src="images/Actor/Reunião_com_o_ator_norte-americano_Keanu_Reeves_(46806576944)_(cropped).jpg"
+            alt="Keanu Reeves"
+          />
+          <input
+            type="checkbox"
+            id="Keanu Reeves"
+            class="inputActor"
+            onchange="agregarActor(event)"
+            placeholder="Keanu Reeves"
+          />
+          <label>Keanu Reeves</label>
+        </div>
+
+        <!-- Benedict Cumberbatch -->
+        <div class="actor">
+          <img
+            class="actor-img"
+            src="images/Actor/MV5BMjE0MDkzMDQwOF5BMl5BanBnXkFtZTgwOTE1Mjg1MzE@._V1_FMjpg_UX1000_.jpg"
+            alt="Benedict Cumberbatch"
+          />
+          <input type="checkbox" id="Benedict Cumberbatch" class="inputActor"
+          onchange="agregarActor(event)" placeholder="Benedict Cumberbatch"">
+          <label>Benedict Cumberbatch</label>
+        </div>
+
+        <!-- Emma Stone -->
+        <div class="actor">
+          <img
+            class="actor-img"
+            src="images/Actor/Emma.jpeg"
+            alt="Emma Stone"
+          />
+          <input
+            type="checkbox"
+            id="Emma Stone"
+            class="inputActor"
+            onchange="agregarActor(event)"
+            placeholder="Emma Stone"
+          />
+          <label>Emma Stone</label>
+        </div>
+        <!--Will Smith-->
+        <div class="actor">
+          <img
+            class="actor-img"
+            src="images/Actor/Willi.jpeg"
+            alt="Emma Stone"
+          />
+          <input type="checkbox" id="Will Smith" class="inputActor"
+          onchange="agregarActor(event)" placeholder="Will Smith"">
+          <label>Will Smith</label>
+        </div>
+      </div>
+      <button id="buton1" onclick="evento()">Generar sugerencias</button>
         <hr />
         <h2>Sugerencias:</h2>
 
-        <div id="sugernciasGeneradas"></div>
+        <div id="sugerenciasGeneradas"></div>
       </div>
     </div>
-
-    <footer class="flex-container">
+    <br />
+    <!-- <footer class="flex-container">
       <div class="flex">
         <p>Prolog Peliculas</p>
         <span>Ivan Palacios, Josue Rodriguez &copy; 2023</span>
       </div>
-    </footer>
-</Cuerpo>
+    </footer> -->
+
     <script src="tau-prolog.js"></script>
     <script src="index.js"></script>
   </body>

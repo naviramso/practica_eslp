@@ -19,7 +19,6 @@
 
 header {
     height: 10vh;
-    position: fixed;
     background-color: rgba(0, 0, 0, 0.817);
     z-index: 1;
 }
@@ -36,11 +35,18 @@ nav ul{
 
 ul a {
     text-decoration: none;
+    color: white;
 }
 
 nav {
     width: 60%;
     flex-direction: column;
+}
+
+nav span {
+    color: white;
+    font-weight: bold;
+    font-size: large;
 }
 
 footer .flex {
@@ -98,7 +104,43 @@ footer .flex {
     height: 150px;
 }
 
-cuerpo {
-    position: absolute;
-    top: 10vh;
+#sugerenciasGeneradas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 100px;
+}
+
+.sugerencias {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 45%;
+    background-color: rgba(243, 243, 243, 0.531);
+}
+
+.sugerencias .pelicula-img{
+    width: 40%;
+    height: auto;
+}
+
+.sugerencias h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.container-pe {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 30px;
 }
