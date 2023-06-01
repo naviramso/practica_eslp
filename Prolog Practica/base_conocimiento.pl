@@ -1,6 +1,6 @@
+use_module(library(http/json)).
 % Películas y sus características
-:- use_module(library(http/json)).
-pelicula('Taxi Driver', drama, 'La historia de Travis Bickle, un veterano de Vietnam que trabaja como taxista y se sumerge en la decadencia de Nueva York.','taxi.jpg').
+pelicula('Taxi Driver', drama, 'La historia de Travis Bickle, un veterano de Vietnam que trabaja como taxista y se sumerge en la decadencia de Nueva York.').
 actores('Taxi Driver', ['Robert De Niro', 'Jodie Foster']).
 
 pelicula('Raging Bull', drama, 'La vida del boxeador Jake LaMotta y su ascenso y caída en el mundo del boxeo, marcada por la autodestrucción y la violencia.', 'ranging.jpg').
@@ -54,46 +54,44 @@ actores('Finding Neverland', ['Johnny Depp', 'Kate Winslet']).
 pelicula('Black Mass', crimen, 'Basada en la vida real de Whitey Bulger, un infame gánster de Boston que colabora con el FBI mientras controla el crimen organizado de la ciudad.', 'black.jpg').
 actores('Black Mass', ['Johnny Depp', 'Benedict Cumberbatch']).
 
-pelicula('Sleepy Hollow', horror, 'Una adaptación del cuento de Washington Irving, donde un detective investiga una serie de asesinatos en un pueblo embrujado.').
+pelicula('Sleepy Hollow', horror, 'Una adaptación del cuento de Washington Irving, donde un detective investiga una serie de asesinatos en un pueblo embrujado.','Sleepy Hollow.jpeg').
 actores('Sleepy Hollow', ['Johnny Depp', 'Christina Ricci']).
 
-pelicula('Iron Man', accion, 'La historia del millonario Tony Stark, quien se convierte en el superhéroe Iron Man para luchar contra el mal y proteger al mundo.').
+pelicula('Iron Man', accion, 'La historia del millonario Tony Stark, quien se convierte en el superhéroe Iron Man para luchar contra el mal y proteger al mundo.','Iron Man.jpeg').
 actores('Iron Man', ['Robert Downey Jr.', 'Gwyneth Paltrow']).
 
-pelicula('Sherlock Holmes', accion, 'Basada en el famoso detective creado por Arthur Conan Doyle, sigue las aventuras de Sherlock Holmes y su compañero Watson mientras resuelven misterios.').
+pelicula('Sherlock Holmes', accion, 'Basada en el famoso detective creado por Arthur Conan Doyle, sigue las aventuras de Sherlock Holmes y su compañero Watson mientras resuelven misterios.','Sherlock.jpeg').
 actores('Sherlock Holmes', ['Robert Downey Jr.', 'Jude Law']).
 
-pelicula('The Avengers', accion, 'Un grupo de superhéroes se unen para proteger la Tierra de una amenaza alienígena, liderados por Iron Man, interpretado por Robert Downey Jr.').
+pelicula('The Avengers', accion, 'Un grupo de superhéroes se unen para proteger la Tierra de una amenaza alienígena, liderados por Iron Man, interpretado por Robert Downey Jr.','The avengers.jpeg').
 actores('The Avengers', ['Robert Downey Jr.', 'Chris Evans', 'Chris Hemsworth']).
 
-pelicula('Tropic Thunder', comedia, 'Un grupo de actores de Hollywood se encuentra en medio de un conflicto armado real mientras filman una película de guerra.').
+pelicula('Tropic Thunder', comedia, 'Un grupo de actores de Hollywood se encuentra en medio de un conflicto armado real mientras filman una película de guerra.','Tropic Thunder.jpg').
 actores('Tropic Thunder', ['Robert Downey Jr.', 'Ben Stiller', 'Jack Black']).
 
-pelicula('La La Land', musical, 'Un pianista de jazz y una aspirante a actriz se encuentran y se enamoran en Los Ángeles mientras persiguen sus sueños en el mundo del espectáculo.').
+pelicula('La La Land', musical, 'Un pianista de jazz y una aspirante a actriz se encuentran y se enamoran en Los Ángeles mientras persiguen sus sueños en el mundo del espectáculo.','La La Land.jpeg').
 actores('La La Land', ['Emma Stone', 'Ryan Gosling']).
 
-pelicula('Easy A', comedia, 'Una estudiante de secundaria inventa un rumor sobre su vida sexual para mejorar su reputación, pero las cosas se salen de control.').
+pelicula('Easy A', comedia, 'Una estudiante de secundaria inventa un rumor sobre su vida sexual para mejorar su reputación, pero las cosas se salen de control.','Easy A.jpeg').
 actores('Easy A', ['Emma Stone', 'Penn Badgley']).
 
-pelicula('The Help', drama, 'La historia de varias mujeres afroamericanas que trabajan como empleadas domésticas en los años 60 en el sur de Estados Unidos y su lucha por la igualdad.').
+pelicula('The Help', drama, 'La historia de varias mujeres afroamericanas que trabajan como empleadas domésticas en los años 60 en el sur de Estados Unidos y su lucha por la igualdad.','The Help.jpeg').
 actores('The Help', ['Emma Stone', 'Viola Davis']).
 
-pelicula('Birdman or (The Unexpected Virtue of Ignorance)', comedia_drama, 'Un actor de renombre intenta revitalizar su carrera en Broadway mientras lidia con problemas personales y la voz en su cabeza.').
+pelicula('Birdman or (The Unexpected Virtue of Ignorance)', comedia_drama, 'Un actor de renombre intenta revitalizar su carrera en Broadway mientras lidia con problemas personales y la voz en su cabeza.','Birdman.jpg').
 actores('Birdman or (The Unexpected Virtue of Ignorance)', ['Emma Stone', 'Michael Keaton']).
 
-pelicula('Men in Black', ciencia_ficcion, 'Un agente secreto se une a una organización encargada de proteger a la Tierra de extraterrestres, enfrentando situaciones cómicas y peligrosas.').
+pelicula('Men in Black', ciencia_ficcion, 'Un agente secreto se une a una organización encargada de proteger a la Tierra de extraterrestres, enfrentando situaciones cómicas y peligrosas.','Men in Black.jpeg').
 actores('Men in Black', ['Will Smith', 'Tommy Lee Jones']).
 
-pelicula('Independence Day', ciencia_ficcion, 'En el día de la independencia de Estados Unidos, la humanidad se enfrenta a una invasión alienígena y un piloto de combate lucha por salvar al mundo.').
+pelicula('Independence Day', ciencia_ficcion, 'En el día de la independencia de Estados Unidos, la humanidad se enfrenta a una invasión alienígena y un piloto de combate lucha por salvar al mundo.','Independece Day.jpeg').
 actores('Independence Day', ['Will Smith', 'Jeff Goldblum']).
 
-pelicula('I Am Legend', ciencia_ficcion, 'El último hombre en la Tierra lucha por sobrevivir en un mundo postapocalíptico lleno de criaturas mutantes y busca una cura para la enfermedad que los ha convertido.').
+pelicula('I Am Legend', ciencia_ficcion, 'El último hombre en la Tierra lucha por sobrevivir en un mundo postapocalíptico lleno de criaturas mutantes y busca una cura para la enfermedad que los ha convertido.','I am Legend.jpeg').
 actores('I Am Legend', ['Will Smith']).
 
-pelicula('The Pursuit of Happyness', drama, 'Basada en la historia real de Chris Gardner, un hombre que lucha por superar la adversidad y alcanzar el éxito profesional mientras cuida a su hijo.').
+pelicula('The Pursuit of Happyness', drama, 'Basada en la historia real de Chris Gardner, un hombre que lucha por superar la adversidad y alcanzar el éxito profesional mientras cuida a su hijo.','The Pursuit.jpeg').
 actores('The Pursuit of Happyness', ['Will Smith', 'Jaden Smith']).
-
-
 
 recomendar_peliculas(Generos, ActoresFavoritos, PeliculasRecomendadas) :-
     findall((Pelicula,Z, Y), (
@@ -120,9 +118,3 @@ interseccion([_|Resto1], Lista2, Interseccion) :-
 
 hay_interseccion(Lista1, Lista2) :-
     interseccion(Lista1, Lista2, [_|_]).
-
-
-    
-
-
-    

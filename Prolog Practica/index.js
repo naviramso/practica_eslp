@@ -18,7 +18,7 @@ session.consult("base_conocimiento.pl", {
 
 // Función para realizar la consulta
 function evento() {
-  session.query("recomendar_peliculas([drama] , ['Al Pacino'], P).", {
+  session.query("recomendar_peliculas([drama, ciencia_ficcion] , ['Will Smith'], P).", {
     success: function () {
       session.answer(x => {
         // Obtener los resultados como cadena de texto
@@ -38,3 +38,38 @@ function evento() {
   });}
 
   console.log(resultArray);
+
+  const genres = [
+    "Drama",
+    "Acción",
+    "Aventura",
+    "Fantasía",
+    "Musical",
+    "Crimen",
+    "Horror",
+    "Comedia",
+    "Comedia-drama",
+    "Ciencia ficción",
+  ];
+  
+  const checkboxes = document.querySelector(".generos-container");
+  
+  genres.forEach((genre) => {
+    const section = document.createElement("section");
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.name = genre;
+    input.id = genre;
+    section.appendChild(input);
+  
+    const label = document.createElement("label");
+    label.for = genre;
+    label.textContent = genre;
+    section.appendChild(label);
+  
+    checkboxes.appendChild(section);
+  });
+  
+
+
+  
